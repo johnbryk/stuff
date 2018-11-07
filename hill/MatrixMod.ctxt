@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=MatrixMod
+comment0.text=\n\ Matrices\ modulo\ something.\n
+comment1.params=rows
+comment1.target=void\ validate(int[][])
+comment2.params=rows\ mod
+comment2.target=MatrixMod(int[][],\ int)
+comment3.params=vector
+comment3.target=int[]\ times(int[])
+comment4.params=that
+comment4.target=MatrixMod\ times(MatrixMod)
+comment5.params=k\ l
+comment5.target=MatrixMod\ minor(int,\ int)
+comment6.params=k\ l
+comment6.target=int\ cofactor(int,\ int)
+comment7.params=
+comment7.target=int\ det()
+comment8.params=
+comment8.target=MatrixMod\ transpose()
+numComments=9
