@@ -42,7 +42,25 @@ public class PlayfairCipher
         }
         
         return ciphertext;
-    }    
+    }
+    
+    public String decrypt(String ciphertext) {
+        int blocks = ciphertext.length() / 2;
+        String plaintext = "";
+        
+        for (int i = 0; i < blocks; i++) {
+            char[] block = new char[2];
+            for (int j = 0; j < 2; j++) {
+                block[j] = plaintext.charAt(2 * i + j);
+            }
+            char[] plainblock = this.grid.decryptLetters(block);
+            for (int j = 0; j < 2; j++) {
+                plaintext += plainblock[j];
+            }
+        }
+        
+        return ciphertext;
+    } 
        
     public String prepareString(String text) {
         text = text.toUpperCase();

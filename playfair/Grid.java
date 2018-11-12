@@ -15,14 +15,24 @@ public class Grid
         positions[1][1] = aux;
     }
     
-    public static void shiftRight(int[][] positions) {
+    public static void shiftDown(int[][] positions) {
         positions[0][1] = (positions[0][1] + 1) % 5;
         positions[1][1] = (positions[1][1] + 1) % 5;
     }
     
-    public static void shiftDown(int[][] positions) {
+    public static void shiftUp(int[][] positions) {
+        positions[0][1] = (positions[0][1] - 1) % 5;
+        positions[1][1] = (positions[1][1] - 1) % 5;
+    }
+    
+    public static void shiftRight(int[][] positions) {
         positions[0][0] = (positions[0][0] + 1) % 5;
         positions[1][0] = (positions[1][0] + 1) % 5;
+    }
+    
+    public static void shiftLeft(int[][] positions) {
+        positions[0][0] = (positions[0][0] - 1) % 5;
+        positions[1][0] = (positions[1][0] - 1) % 5;
     }
     
     public Grid(String keyword) {
@@ -85,6 +95,21 @@ public class Grid
             shiftDown(positions);
         } else if (rule == 2) {
             shiftRight(positions);
+        } else {
+            System.out.print("**SERIOUS ERROR**");
+        }
+        return this.getLetters(positions);
+    }
+    
+    public char[] decryptLetters(char[] letters) {
+        int[][] positions = this.findLetters(letters);
+        int rule = rule(positions);
+        if (rule == 0) {
+            swap(positions);
+        } else if (rule == 1) {
+            shiftUp(positions);
+        } else if (rule == 2) {
+            shiftLeft(positions);
         } else {
             System.out.print("**SERIOUS ERROR**");
         }

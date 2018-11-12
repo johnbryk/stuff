@@ -11,16 +11,22 @@ public class Main
  
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String plaintext = "";
         
+        String mode = in.nextLine().toUpperCase();
+        String key = in.nextLine().toUpperCase();
+        String text = "";
         while (in.hasNextLine()) {
-            plaintext += in.nextLine();
+            text += in.nextLine();
+        }        
+        
+        PlayfairCipher cipher = new PlayfairCipher(key);
+
+        if (mode.equals("ENCRYPT")) {
+            System.out.println(cipher.encrypt(text));
+        } else if (mode.equals("DECRYPT")) {
+            System.out.println(cipher.decrypt(text));
         }
-        
-        PlayfairCipher cipher = new PlayfairCipher("QUIXOTE");
-        
-        System.out.println(cipher.encrypt(plaintext));
-        
     }
+
     
 }
