@@ -2,7 +2,7 @@ import java.util.Random;
 
 
 /**
- * Playfair grid.
+ * Grid for Playfair cipher. Actually does the encryption and decryption of blocks.
  */
 public class Grid
 {

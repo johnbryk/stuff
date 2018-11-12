@@ -1,10 +1,8 @@
 import java.util.Random;
 
 /**
- * Write a description of class PlayfairCipher here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Playfair cipher. Formats plaintext and breaks plain/ciphertexts into blocks
+ * before delegating encryption/decryption to the grid.
  */
 public class PlayfairCipher
 {
